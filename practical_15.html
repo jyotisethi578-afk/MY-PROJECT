@@ -1,0 +1,48 @@
+ <!-- 15. Demonstrate DOM manipulation using getElementById(), querySelector(), and innerHTML -->
+ <!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation - Students Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .highlight {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="title">Student List</h2>
+  
+  <ul>
+    <li class="student">Rahul</li>
+    <li class="student">Priya</li>
+    <li class="student">Amit</li>
+  </ul>
+
+  <button onclick="updateStudents()">Click to Update Students</button>
+
+  <script>
+    function updateStudents() {
+      // --- Using getElementById ---
+      let titleElement = document.getElementById("title");
+      titleElement.innerHTML = "Updated Student List (via getElementById)";
+
+      // --- Using querySelector (first student) ---
+      let firstStudent = document.querySelector(".student");
+      firstStudent.innerHTML = "Rahul (Topper)";
+      firstStudent.classList.add("highlight");
+
+      // --- Using innerHTML with querySelectorAll ---
+      let allStudents = document.querySelectorAll(".student");
+      allStudents.forEach((student, index) => {
+        student.innerHTML = "Student " + (index + 1) + ": " + student.innerHTML;
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- 13. Create and invoke user-defined functions in JavaScript; use var, let, and const for scope demonstration<!DOCTYPE html> -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Functions & Scope Demo</title>
+</head>
+<body>
+  <h2>Open the Console to See Output</h2>
+  <script>
+    // --- User-defined function ---
+    function greet(name) {
+      console.log("Hello, " + name + "!");
+    }
+
+    // Invoking the function
+    greet("Jyoti");
+    greet("Harvey");
+
+    // --- Function with arithmetic ---
+    function addNumbers(a, b) {
+      return a + b;
+    }
+
+    let sum = addNumbers(5, 7);
+    console.log("Sum is:", sum);
+
+    // --- Scope demonstration ---
+    function scopeDemo() {
+      if (true) {
+        var x = 10;   // function-scoped
+        let y = 20;   // block-scoped
+        const z = 30; // block-scoped and constant
+
+        console.log("Inside block:");
+        console.log("x =", x); // accessible
+        console.log("y =", y); // accessible
+        console.log("z =", z); // accessible
+      }
+
+      console.log("Outside block:");
+      console.log("x =", x); // still accessible (var leaks out of block)
+      // console.log("y =", y); // ❌ Error: y is not defined outside block
+      // console.log("z =", z); // ❌ Error: z is not defined outside block
+    }
+
+    scopeDemo();
+  </script>
+</body>
+</html>

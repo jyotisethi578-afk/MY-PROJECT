@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Page - Rungta International University</title>
+    
+</head>
+<style>
+    /* Mobile-first design */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 1.5em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.box {
+    background-color: white;
+    margin: 0.5em 0;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .box {
+        width: 30%;
+    }
+}
+
+</style>
+<body>
+    <div class="header">
+        <h1>Rungta International University</h1>
+        <p class="tagline">Learning for a Better Future</p>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h2>About Us</h2>
+            <p><strong>International University provides quality education and focuses on skill development.</strong></p>
+            <p>Rungta International University, Bhilai, is one of the leading educational institutions in Chhattisgarh. It aims to provide world-class education with a focus on innovation, research, and practical learning. The university offers various programs in Engineering, Management, Science, and Arts, helping students develop skills for global careers. With modern infrastructure, experienced faculty, and a student-friendly environment, Rungta promotes excellence in both academics and personal growth.</p>
+        </div>
+        <div class="box">
+            <h2>Courses</h2>
+            <p><strong>offer B.Tech, B.Sc, MBA, and many other professional programs.</strong>
+                <ol type="I">
+                    <li>in Civil Engineering, Computer Science & Engineering, Information Technology, Electronics & Telecommunication etc. 
+Rungta International University</li>
+<li>M.Tech in Structural Engineering, Computer Science & Engineering.</li>
+<li>B.Pharm, M.Pharm and Diploma in Pharmacy</li>
+<li>BCA (Bachelor of Computer Applications) and MCA (Master of Computer Applications).</li>
+<li>BBA, MBA and integrated BBA-MBA programs. </li>
+<li>B.Sc and M.Sc programs in Biotechnology, Microbiology, Computer Science.</li>
+                </ol>
+            </p>
+        </div>
+        <div class="box">
+            <h2>Contact</h2>
+            <p>Email: info@rungta.edu.in</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Rungta International University</p>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Selectors - Rungta International University</title>
+  <style>
+    /* 1. Universal Selector */
+    * {
+      font-family: Arial, sans-serif;
+      margin: 6px;
+      background-color: #f9f9ff;
+    }
+
+    /* 2. ID Selector */
+    #main-heading {
+      color: #003366;
+      text-align: center;
+      background-color: #e0ecff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    /* 3. Class Selector */
+    .highlight {
+      background-color: yellow;
+      color: red;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    /* 4. Descendant Selector */
+    .container p {
+      color: green;
+      font-style: italic;
+    }
+
+    /* 5. Group Selector */
+    h2, h3 {
+      color: purple;
+      text-decoration: underline;
+    }
+
+    /* Extra styling for RIU feel */
+    header {
+      text-align: center;
+      background-color: #003366;
+      color: rgb(13, 13, 13);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #003366;
+      color: rgb(20, 19, 19);
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rungta International University</h1>
+    <p><b>Department of Computer Science & Engineering</b></p>
+  </header>
+
+  <h1 id="main-heading">Demonstration of CSS Selectors</h1>
+
+  <p class="highlight">This paragraph uses a <b>class selector</b>.</p>
+  <p>This is another normal paragraph without any special class.</p>
+
+  <div class="container">
+    <p>This paragraph is inside a div container — styled using a <b>descendant selector</b>.</p>
+  </div>
+
+  <h2>Heading Level 2 (Group Selector Example)</h2>
+  <h3>Heading Level 3 (Group Selector Example)</h3>
+
+  <footer>
+    <p>Submitted by: <b>gaurav sethi</b> |<U> ERP ID: _= RU-25-10520</U>| Course: B.Tech CSE (Core)</p>
+    <p>Rungta International University, Bhilai (CG)</p>
+  </footer>
+</body>
+</html>

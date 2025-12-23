@@ -1,0 +1,44 @@
+<!-- 12. Write JavaScript to demonstrate conditional statements and looping (for, while, do…while)<!DOCTYPE html> -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Conditionals and Loops Demo</title>
+</head>
+<body>
+  <h2>Open the Console to See Output</h2>
+  <script>
+    // --- Conditional Statements ---
+    let number = 7;
+
+    if (number > 10) {
+      console.log("Number is greater than 10");
+    } else if (number === 10) {
+      console.log("Number is exactly 10");
+    } else {
+      console.log("Number is less than 10");
+    }
+
+    // --- For Loop ---
+    console.log("For loop (counting 1 to 5):");
+    for (let i = 1; i <= 5; i++) {
+      console.log("Iteration:", i);
+    }
+
+    // --- While Loop ---
+    console.log("While loop (counting down from 5):");
+    let count = 5;
+    while (count > 0) {
+      console.log("Count:", count);
+      count--;
+    }
+
+    // --- Do…While Loop ---
+    console.log("Do…while loop (runs at least once):");
+    let x = 0;
+    do {
+      console.log("x is:", x);
+      x++;
+    } while (x < 3);
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!-- 14. Handle HTML form validation using JavaScript events like onsubmit, oninput, and use alert() for 
+feedback -->
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      color: #444;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+    input:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+    .error {
+      color: red;
+      font-size: 0.85em;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" oninput="checkUsername()">
+      <span id="userError" class="error"></span>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" oninput="checkEmail()">
+      <span id="emailError" class="error"></span>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" oninput="checkPassword()">
+      <span id="passError" class="error"></span>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function checkUsername() {
+      let username = document.getElementById("username").value;
+      let error = document.getElementById("userError");
+      error.textContent = username.length < 3 ? "Username must be at least 3 characters." : "";
+    }
+
+    function checkEmail() {
+      let email = document.getElementById("email").value;
+      let error = document.getElementById("emailError");
+      let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      error.textContent = !pattern.test(email) ? "Invalid email format." : "";
+    }
+
+    function checkPassword() {
+      let password = document.getElementById("password").value;
+      let error = document.getElementById("passError");
+      error.textContent = password.length < 6 ? "Password must be at least 6 characters." : "";
+    }
+
+    function validateForm() {
+      let username = document.getElementById("username").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      if (username === "" || email === "" || password === "") {
+        alert("⚠️ All fields must be filled out!");
+        return false;
+      }
+      if (username.length < 3) {
+        alert("⚠️ Username too short!");
+        return false;
+      }
+      let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!pattern.test(email)) {
+        alert("⚠️ Invalid email address!");
+        return false;
+      }
+      if (password.length < 6) {
+        alert("⚠️ Password too short!");
+        return false;
+      }
+      alert("✅ Form submitted successfully!");
+      return true;
+    }
+  </script>
+</body>
+</html>
