@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attractive Responsive Layout</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #eef2f7;
+}
+header {
+    background: linear-gradient(135deg, #4f73ff, #2544c9);
+    color: white;
+    padding: 22px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+h2 {
+    text-align: center;
+    margin: 25px 0 15px;
+    color: #2544c9;
+    letter-spacing: 1px;
+}
+.flex-box {
+    display: flex;
+    margin: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.flex-sidebar {
+    width: 250px;
+    background: #dfe6ff;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.flex-content {
+    flex: 1;
+    padding: 20px;
+    background: #ffffff;
+    font-size: 16px;
+}
+.float-box {
+    margin: 20px;
+    background: white;
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.float-sidebar {
+    width: 230px;
+    float: left;
+    padding: 20px;
+    background: #dfe6ff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.float-content {
+    margin-left: 230px;
+    padding: 20px;
+    background: white;
+    font-size: 16px;
+}
+
+/* CLEARFIX */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+@media (max-width: 600px) {
+    .flex-box {
+        flex-direction: column;
+    }
+    .flex-sidebar {
+        width: 100%;
+    }
+
+    .float-sidebar,
+    .float-content {
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+    .flex-sidebar { width: 180px; }
+    .float-sidebar { width: 160px; }
+    .float-content { margin-left: 160px; }
+}
+@media (min-width: 900px) {
+    .flex-sidebar { width: 250px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>Responsive Layout Using Flexbox, Float & Media Queries</header>
+
+<h2>Flexbox Layout</h2>
+<div class="flex-box">
+    <div class="flex-sidebar">Sidebar</div>
+    <div class="flex-content">
+        This is the content area created using the Flexbox layout.  
+        It adjusts smoothly across different screen sizes.
+    </div>
+</div>
+
+<h2>Float + Clear Layout</h2>
+<div class="float-box clearfix">
+    <div class="float-sidebar">Sidebar</div>
+    <div class="float-content">
+        This is the content area created using Float + Clear layout.  
+        It also becomes fully responsive using media queries.
+    </div>
+</div>
+
+</body>
+</html>
